@@ -1,5 +1,5 @@
 <p align="center">
-    <img width="73" height="84" src="[http://material-bread.org/logo-shadow.svg] alt="Torantula"> Torantula-ng | The Darknet Weathermap Suite
+    <img width="73" height="84" src="http://material-bread.org/logo-shadow.svg alt="Torantula"> Torantula-ng | The Darknet Weathermap Suite
 </p>
 
 ![spider2](https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png) 
