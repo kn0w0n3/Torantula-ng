@@ -1,9 +1,8 @@
 <p align="center">
-    <img width="73" height="84" src="http://material-bread.org/logo-shadow.svg](https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" alt="Torantula"> Torantula-ng | The Darknet Weathermap Suite
+    <img width="73" height="84" src="hhttps://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" alt="Torantula"> Torantula-ng | The Darknet Weathermap Suite
 </p>
 
-![spider2](https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png) 
-# Torantula-ng | The Darknet Weathermap Suite
+
 
 
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.      
