@@ -1,4 +1,4 @@
-# The Darknet Weathermap Suite
+# Torantula-NG | The Darknet Weathermap Suite
 
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.  
 
