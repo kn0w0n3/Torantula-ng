@@ -1,5 +1,5 @@
-![torantula logo](https://user-images.githubusercontent.com/22214754/199813259-86618ba4-8ad3-473c-84e8-dfd9113c9767.png)  
-
+![torantula-logo-transparent](https://user-images.githubusercontent.com/22214754/199813591-26added0-bb16-4d91-a609-3b2289b14013.png)  
+  
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.      
 
 **Torantula** is a web-scraper with the capability to crawl through the Tor network and download the HTML and links on each page it visits. Thus, the scraper can collect data from clear-net sites *and* Tor Hidden Services, and should never get banned from sites on either.
