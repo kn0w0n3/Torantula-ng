@@ -1,4 +1,4 @@
-<p align="center" style="font-size:24 px">
+<p align="center" style="font-size:40 px">
     <img width="73" height="84" src="https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" alt="Torantula"> Torantula-ng | The Darknet Weathermap Suite 
 </p>  
 
