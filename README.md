@@ -1,5 +1,5 @@
-<p align="center">
-    <img width="73" height="84" src="https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" alt="Torantula"> <h2> Torantula-ng | The Darknet Weathermap Suite </h2>
+<p align="center" style="font-size:24 px">
+    <img width="73" height="84" src="https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" alt="Torantula"> Torantula-ng | The Darknet Weathermap Suite 
 </p>  
 
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.      
