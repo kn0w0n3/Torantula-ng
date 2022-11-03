@@ -1,8 +1,8 @@
 # The Darknet Weathermap Suite
 
-This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.
+This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.  
 
-![torantula icon](torantula-icon.png)
+![torantula-icon](https://user-images.githubusercontent.com/22214754/199789492-98e8e79b-0c1a-44f9-b986-c348e3854a5e.png)  
 
 **Torantula** is a web-scraper with the capability to crawl through the Tor network and download the HTML and links on each page it visits. Thus, the scraper can collect data from clear-net sites *and* Tor Hidden Services, and should never get banned from sites on either.
 
