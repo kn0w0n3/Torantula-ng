@@ -3,7 +3,7 @@
 </p>  -->
 
 <div>
-    <p style="float: left;"><img src="https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" height="73px" width="84px" border="0px"></p><p>Torantula-ng | The Darknet Weathermap Suite</p>
+    <p style="float: left;"><img src="https://user-images.githubusercontent.com/22214754/199802983-78fde14a-5ec1-47f9-bd0d-43a0a05df60a.png" height="73px" width="84px" border="0px"> Torantula-ng | The Darknet Weathermap Suite</p>
 </div>
 
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.      
