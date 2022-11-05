@@ -152,3 +152,7 @@ Joshua McGiff - 2017 - Pre-processor and data storage/handling
 John-Luke Navarro -2017 - Torantula extensive development and data graphing
 
 ## License
+
+## Issues  
+
+https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerror-cannot-import-name-suppress
