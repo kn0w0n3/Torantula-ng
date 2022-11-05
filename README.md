@@ -163,9 +163,9 @@ Remove the f in: filename = f'quotes-{page}.html'
 
 The new line shoul dlook like this: filename = 'quotes-{page}.html'   
 
-2) cannot import name suppress 
-3)    
-https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerror-cannot-import-name-suppress    
+2) cannot import name suppress  
+   
+https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerror-cannot-import-name-suppress      
 
 ![issue-fix-one-11-4-22](https://user-images.githubusercontent.com/22214754/200114314-f59923af-d0fb-41b3-93b8-bf5bab2558a9.png)  
   
