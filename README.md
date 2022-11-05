@@ -155,7 +155,16 @@ John-Luke Navarro -2017 - Torantula extensive development and data graphing
 
 ## Issues  
 
-https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerror-cannot-import-name-suppress  
+1) Invalid Syntax.   
+
+![scrapy-tutorial-invalid-syntax-11-5-22](https://user-images.githubusercontent.com/22214754/200114785-b88022ed-1ad7-495f-9e62-3761b405050a.png)  
+
+Remove the f in: filename = f'quotes-{page}.html'   
+
+The new line shoul dlook like this: filename = 'quotes-{page}.html'   
+
+2) cannot import name suppress    
+https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerror-cannot-import-name-suppress    
 
 ![issue-fix-one-11-4-22](https://user-images.githubusercontent.com/22214754/200114314-f59923af-d0fb-41b3-93b8-bf5bab2558a9.png)  
   
