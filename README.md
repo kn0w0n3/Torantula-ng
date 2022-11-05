@@ -1,4 +1,4 @@
-# ![torantula-logo-transparen2t](https://user-images.githubusercontent.com/22214754/200093204-4a10c7a0-fe7c-48e6-815e-4adb420119bf.png)      
+# ![torantula-logo-transparen2t](https://user-images.githubusercontent.com/22214754/200093341-527f4996-4bf8-4c8f-b17f-233b56561e46.png)        
 
 ![torantula-gui-11-4-22](https://user-images.githubusercontent.com/22214754/200092899-6fc56c67-eaba-4df6-aaac-670f8b1f3433.png)  
   
