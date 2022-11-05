@@ -1,6 +1,8 @@
 # ![torantula-logo-transparen2t](https://user-images.githubusercontent.com/22214754/200093341-527f4996-4bf8-4c8f-b17f-233b56561e46.png)        
 
-![torantula-gui3-11-4-22](https://user-images.githubusercontent.com/22214754/200096108-9053466f-920c-435f-a5b4-046f3456ae25.png)    
+![torantula-gui3-11-4-22](https://user-images.githubusercontent.com/22214754/200096108-9053466f-920c-435f-a5b4-046f3456ae25.png)  
+
+![torantula-gui2- 11-4-22 (1)](https://user-images.githubusercontent.com/22214754/200096346-a18dbd3d-ce65-41ee-8865-c198cba9a177.png)  
   
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.      
 
