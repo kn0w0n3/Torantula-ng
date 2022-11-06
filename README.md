@@ -1,5 +1,5 @@
-# Torantula
-TOR Scraper App
+# Torantula | TOR Scraper
+The Darknet Weathermap
 
 # ![torantula-gui-11](https://user-images.githubusercontent.com/22214754/200186166-55e5346b-1d14-42ad-a4f4-63b553487f9e.gif)            
   
