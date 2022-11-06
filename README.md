@@ -191,4 +191,6 @@ Qt framework 5.15.0
 ![sqlitefg](https://user-images.githubusercontent.com/22214754/179894516-3059e142-fb38-40bc-a32c-65500a223eb1.png)    
 https://www.sqlite.org/index.html    
 https://sqlitestudio.pl  
-  
+
+# **Programming Languages:**  
+![python-logo-trans-450x150](https://user-images.githubusercontent.com/22214754/200187037-b4005612-358b-4af8-be9d-a5aedd9bb85a.png)      
