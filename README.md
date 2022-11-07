@@ -173,8 +173,6 @@ https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerro
 1) No module name MySQLdb
 
 Solution: 
-Fix sql error for Torantula  
-
 $ sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic main'  
 $ sudo apt update  
 $ sudo apt install -y python-mysqldb  
