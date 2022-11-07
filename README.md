@@ -168,7 +168,18 @@ https://stackoverflow.com/questions/68288772/using-python2-and-scrapy-importerro
 
 ![issue-fix-one-11-4-22](https://user-images.githubusercontent.com/22214754/200114314-f59923af-d0fb-41b3-93b8-bf5bab2558a9.png)  
 
-# Developed with:    
+# Ubuntu 20.04 Errors
+
+1) No module name MySQLdb
+
+Solution: 
+Fix sql error for Torantula  
+
+$ sudo add-apt-repository 'deb http://archive.ubuntu.com/ubuntu bionic main'  
+$ sudo apt update  
+$ sudo apt install -y python-mysqldb  
+
+# Developed with:      
 
 ![github-linux-logo-kernel-corn](https://user-images.githubusercontent.com/22214754/196063512-495e0624-c344-4b32-9507-0f4fbc85a633.png)      
 
@@ -193,4 +204,6 @@ https://www.sqlite.org/index.html
 https://sqlitestudio.pl  
 
 # **Programming Languages:**  
-![python-logo-trans-450x150](https://user-images.githubusercontent.com/22214754/200187037-b4005612-358b-4af8-be9d-a5aedd9bb85a.png)      
+![python-logo-trans-450x150](https://user-images.githubusercontent.com/22214754/200187037-b4005612-358b-4af8-be9d-a5aedd9bb85a.png)  
+
+
