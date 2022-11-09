@@ -1,0 +1,89 @@
+2022-11-08 23:16:41 [scrapy.utils.log] INFO: Scrapy 1.8.3 started (bot: Clearscrape)
+2022-11-08 23:16:41 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 2.7.18 (default, Jul  1 2022, 12:27:04) - [GCC 9.4.0], pyOpenSSL 21.0.0 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.3.2, Platform Linux-5.4.0-131-generic-x86_64-with-Ubuntu-20.04-focal
+2022-11-08 23:16:41 [scrapy.crawler] INFO: Overridden settings: {'AUTOTHROTTLE_MAX_DELAY': 3, 'AUTOTHROTTLE_TARGET_CONCURRENCY': 2.0, 'AJAXCRAWL_ENABLED': True, 'COOKIES_ENABLED': False, 'DOWNLOAD_DELAY': 1, 'LOG_LEVEL': 'INFO', 'RETRY_ENABLED': False, 'DOWNLOAD_TIMEOUT': 60, 'DEPTH_PRIORITY': 1, 'SCHEDULER_MEMORY_QUEUE': 'scrapy.squeues.FifoMemoryQueue', 'SCHEDULER_DISK_QUEUE': 'scrapy.squeues.PickleFifoDiskQueue', 'BOT_NAME': 'Clearscrape', 'CONCURRENT_REQUESTS': 120, 'SPIDER_MODULES': ['Clearscrape.spiders'], 'AUTOTHROTTLE_START_DELAY': 0.75, 'AUTOTHROTTLE_ENABLED': True, 'TELNETCONSOLE_PORT': [6023], 'REDIRECT_ENABLED': False, 'LOG_FILE': 'jonathan.log', 'AUTOTHROTTLE_DEBUG': True, 'NEWSPIDER_MODULE': 'Clearscrape.spiders', 'DEPTH_LIMIT': 2, 'CONCURRENT_REQUESTS_PER_DOMAIN': 15, 'REACTOR_THREADPOOL_MAXSIZE': 20}
+2022-11-08 23:16:41 [scrapy.extensions.telnet] INFO: Telnet Password: 0501e5fa63c2ef47
+2022-11-08 23:16:41 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.throttle.AutoThrottle',
+ 'scrapy.extensions.telnet.TelnetConsole']
+2022-11-08 23:16:41 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'Clearscrape.middlewares.IgnoreDomainMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'Clearscrape.middlewares.ProxyMiddleware',
+ 'Clearscrape.middlewares.RandomUserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.ajaxcrawl.AjaxCrawlMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2022-11-08 23:16:41 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware']
+2022-11-08 23:16:41 [scrapy.middleware] INFO: Enabled item pipelines:
+['Clearscrape.pipelines.PagetextPipeline']
+2022-11-08 23:16:41 [scrapy.core.engine] INFO: Spider opened
+2022-11-08 23:16:41 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2022-11-08 23:16:41 [scrapy.extensions.telnet] INFO: Telnet console listening on 127.0.0.1:6023
+2022-11-08 23:16:41 [root] INFO: <GET http://www.secretcitylabs.com>:
+
+2022-11-08 23:16:41 [root] INFO: <GET https://www.propub3r6espa33w.onion/>:
+
+2022-11-08 23:16:41 [scrapy.core.engine] ERROR: Error while obtaining start requests
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/core/engine.py", line 127, in _next_request
+    request = next(slot.start_requests)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/spiders/__init__.py", line 73, in start_requests
+    yield Request(url, dont_filter=True)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/http/request/__init__.py", line 26, in __init__
+    self._set_url(url)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/http/request/__init__.py", line 70, in _set_url
+    raise ValueError('Missing scheme in request url: %s' % self._url)
+ValueError: Missing scheme in request url: 
+2022-11-08 23:16:41 [scrapy.extensions.throttle] INFO: slot: www.secretcitylabs.com | conc: 1 | delay: 1000 ms (+0) | latency:  213 ms | size:   707 bytes
+2022-11-08 23:16:51 [scrapy.core.scraper] ERROR: Error downloading <GET https://www.propub3r6espa33w.onion/>
+Traceback (most recent call last):
+  File "/usr/local/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1416, in _inlineCallbacks
+    result = result.throwExceptionIntoGenerator(g)
+  File "/usr/local/lib/python2.7/dist-packages/twisted/python/failure.py", line 512, in throwExceptionIntoGenerator
+    return g.throw(self.type, self.value, self.tb)
+  File "/usr/local/lib/python2.7/dist-packages/scrapy/core/downloader/middleware.py", line 44, in process_request
+    defer.returnValue((yield download_func(request=request, spider=spider)))
+  File "/usr/local/lib/python2.7/dist-packages/twisted/internet/defer.py", line 654, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "/usr/local/lib/python2.7/dist-packages/twisted/internet/endpoints.py", line 982, in startConnectionAttempts
+    "no results for hostname lookup: {}".format(self._hostStr)
+DNSLookupError: DNS lookup failed: no results for hostname lookup: www.propub3r6espa33w.onion.
+2022-11-08 23:16:51 [scrapy.core.engine] INFO: Closing spider (finished)
+2022-11-08 23:16:51 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/exception_count': 1,
+ 'downloader/exception_type_count/twisted.internet.error.DNSLookupError': 1,
+ 'downloader/request_bytes': 536,
+ 'downloader/request_count': 2,
+ 'downloader/request_method_count/GET': 2,
+ 'downloader/response_bytes': 896,
+ 'downloader/response_count': 1,
+ 'downloader/response_status_count/301': 1,
+ 'elapsed_time_seconds': 10.260695,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2022, 11, 9, 7, 16, 51, 403435),
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 13,
+ 'memusage/max': 60022784,
+ 'memusage/startup': 60022784,
+ 'response_received_count': 1,
+ 'scheduler/dequeued': 2,
+ 'scheduler/dequeued/memory': 2,
+ 'scheduler/enqueued': 2,
+ 'scheduler/enqueued/memory': 2,
+ 'start_time': datetime.datetime(2022, 11, 9, 7, 16, 41, 142740)}
+2022-11-08 23:16:51 [scrapy.core.engine] INFO: Spider closed (finished)
+2022-11-08 23:21:07 [scrapy.utils.log] INFO: Scrapy 1.8.3 started (bot: Clearscrape)
+2022-11-08 23:21:07 [scrapy.utils.log] INFO: Versions: lxml 4.9.1.0, libxml2 2.9.14, cssselect 1.1.0, parsel 1.6.0, w3lib 1.22.0, Twisted 20.3.0, Python 2.7.18 (default, Jul  1 2022, 12:27:04) - [GCC 9.4.0], pyOpenSSL 21.0.0 (OpenSSL 1.1.1i  8 Dec 2020), cryptography 3.3.2, Platform Linux-5.4.0-131-generic-x86_64-with-Ubuntu-20.04-focal

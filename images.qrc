@@ -1,5 +1,9 @@
 <RCC>
     <qresource prefix="/">
         <file>images/Torantula-bg.png</file>
+        <file>images/Torantula-bg3.png</file>
+        <file>images/Torantula-bg2.png</file>
+        <file>images/Torantula-bg-1280-720.png</file>
+        <file>images/Torantula-bg-1280-720-dark80.png</file>
     </qresource>
 </RCC>
