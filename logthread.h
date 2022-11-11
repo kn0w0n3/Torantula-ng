@@ -31,7 +31,6 @@ signals:
      //void scannedFileNumS(QString);
 
 public slots:
-    void getRequiredFiles();
 
 private:
     //QStringList virusList;

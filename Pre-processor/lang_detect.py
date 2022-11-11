@@ -11,9 +11,9 @@ def detect_lang(input):
 
     #load arabic and chinese stopwords -- others are included in nltk corpus
     arabic = set(nltk.word_tokenize(open(
-    'stop_words/stopwords-ar.txt', 'r').read().decode('utf8')))
+    'stop_words/stopwords-ar.txt', 'r').read()))
     chinese = set(nltk.word_tokenize(open(
-    'stop_words/stopwords-zh.txt', 'r').read().decode('utf8')))
+    'stop_words/stopwords-zh.txt', 'r').read()))
 
     #chinese works best if done by character
     ch_words = p_utils.flatten([list(x) for x in words])

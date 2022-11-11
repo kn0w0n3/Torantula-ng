@@ -56,7 +56,7 @@ def concat_dir(dir, path):
             if filename == outfile:
                 continue
             with open(filename, 'rb') as readfile:
-                print 'entered readfile: ' + str(filename)
+                #print 'entered readfile: ' + str(filename)
                 soup = BeautifulSoup(readfile, 'lxml')
                 #remove javascript
                 for script in soup(["script", "style"]):

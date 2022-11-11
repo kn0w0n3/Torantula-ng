@@ -35,15 +35,15 @@ def process_file(input, output, filter_list, stats):
     output_dir = output
     doc_lang = ''
     stats.increment_total()
-    print "filename " + str(filename)
+    #print "filename " + str(filename)
 
     tokenizer = RegexpTokenizer(r'\w+')
-    tokens = tokenizer.tokenize(open(input, 'r').read().decode('utf8'))
+    tokens = tokenizer.tokenize(open(input, 'r').read())
 
-    print tokens[:10]
+    #print tokens[:10]
     doc_lang = ld.detect_lang(tokens)
     stats.increment_lang_count(doc_lang)
-    print '\n' + str(doc_lang) + '\n'
+    #print '\n' + str(doc_lang) + '\n'
 
     #only attempt to process file for classification if in english
     if str(doc_lang) == 'english':
@@ -70,7 +70,7 @@ def process_file(input, output, filter_list, stats):
 def main():
 
     if len(sys.argv) < 3:
-        print "Error: please specify input and ouput directory\nexiting..."
+        #print "Error: please specify input and ouput directory\nexiting..."
         sys.exit(1)
 
     #populates the list of stop words to filter out
@@ -82,7 +82,7 @@ def main():
     if os.path.isdir(sys.argv[1]):
         full_texts_dir = p_utils.concat_results(sys.argv[1])
     else:
-        print "Error: specified input directory does not exist \nexiting..."
+        #print "Error: specified input directory does not exist \nexiting..."
         sys.exit(1)
 
     #fixes naming error if output directory not input with trailing slash

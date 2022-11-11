@@ -7,19 +7,21 @@ import QtQuick.Controls 2.12
 import QtGraphicalEffects 1.12
 
 Window {
-    width: 1280
-    height: 720
+    id: masterWin
+    width: 800
+    height: 500
     visible: true
     maximumWidth: 1280
     maximumHeight: 720
     title: qsTr("TORantula-ng")
 
     Image {
-        id: image
+        id: masterWinBg
         x: 0
         y: 0
         width: 1280
         height: 720
+        visible: false
         source: "images/Torantula-bg-1280-720-dark80.png"
         fillMode: Image.PreserveAspectFit
     }
@@ -47,33 +49,63 @@ Window {
         }
     }
 
+    /*Connections for receiving data from C++ classes.
+      Even though the signals start with a lowercase letter
+      in the class, the first letter of the signal name from
+      the C++ class must be capitalized here after the keyword "on".
+      For example: The signal name: "scrapyCliDataToQml" from the C++ class
+      MainController would need to be changed to "ScrapyCliDataToQml" here.
+      For the connection, you have to use the on keyword like this: onScrapyCliDataToQml.
+      So, two things are happening here; add on for the connection and capitalize the first
+      letter of the signal name from the C++ class.If you make the first letter capital  in the class,
+      it will break here.*/
+
     Connections {
         target: mainController
+        onScrapyCliDataToQml: {
+            mwq_SpiderText.text += scrapyCliData_1
+            mws_SpiderText.text += scrapyCliData_1
+        }
+        onScrapyLogDataToQml: {
+            mwq_LogText.text += scanLogData_1
+            mws_LogText.text += scanLogData_1
+        }
         onSpiderStatusStartedToQml: {
-           runSpiderProcessingText.visible = true
+            mws_StatusText.visible = true
+            //mws_RunSpiderBtn.enabled = false
         }
         onSpiderStatusStoppedToQml: {
-           runSpiderProcessingText.visible = false
+            mws_StatusText.visible = false
+           //runSpiderProcessingText.visible = false
+            //mws_RunSpiderBtn.enabled = true
         }
         onScanLogStatusStartedToQml: {
-           logDataProcessText.visible = true
+           //logDataProcessText.visible = true
+           //runSpiderProcessingText.visible = true
+           mws_StatusText.visible = true
         }
         onScanLogStatusStoppedToQml: {
-           logDataProcessText.visible = false
+            mws_StatusText.visible = false
+           //logDataProcessText.visible = false
+          // runSpiderProcessingText.visible = false
         }
     }
 
+    Connections {
+        target: mainController
+
+    }
     Text {
         id: curTimeTxt
         x: 1212
         y: 5
         width: 64
         height: 15
+        visible: false
         color: "#ffffff"
         text: ""
         font.pixelSize: 16
     }
-
 
     Text {
         id: curDateTxt
@@ -81,79 +113,52 @@ Window {
         y: 25
         width: 64
         height: 15
+        visible: false
         color: "#ffffff"
         text: qsTr("")
         font.pixelSize: 16
     }
 
     Rectangle {
-        id: detailsWin
+        id: mainWinSingle
         x: 0
         y: 0
-        width: 1280
-        height: 720
-        visible: false
+        width: 800
+        height: 500
+        visible: true
         color: "#00ffffff"
 
-        Label {
-            id: label
-            x: 329
-            y: 91
-            width: 143
-            height: 25
-            color: "#ffffff"
-            text: qsTr("Scrapy Log Data")
-            font.underline: false
-            font.italic: false
-            font.bold: false
-            font.pointSize: 14
+
+        Image {
+            id: mws_backgroundImg
+            x: 0
+            y: 0
+            width: 800
+            height: 500
+            source: "images/Torantula-bg3.png"
+            fillMode: Image.PreserveAspectFit
         }
 
-        Button {
-            id: detailsWinBckBtn
-            x: 14
-            y: 13
-            text: qsTr("Back")
-            background: Rectangle {
-                color: "#161e20"
-                radius: 50
-            }
-            layer.effect: DropShadow {
-                width: 69
-                color: "#7711f4"
-                radius: 8
-                verticalOffset: 2
-                transparentBorder: true
-                horizontalOffset: 2
-                spread: 0
-                samples: 17
-            }
-            palette.buttonText: "#ffffff"
-            layer.enabled: true
-
-            onClicked: {
-                detailsWin.visible = false
-                mainWin.visible = true
-            }
-        }
 
         Rectangle {
-            id: rectangle2
+            id: mws_LogDataRect
             x: 121
-            y: 114
+            y: 110
             width: 558
             height: 234
+            visible: false
             color: "#000000"
             border.color: "#ffffff"
             ScrollView {
-                id: scrollView1
+                id: mws_ScrollViewLogData
                 x: 4
                 y: 5
                 width: 546
                 height: 223
+                enabled: true
                 focusPolicy: Qt.NoFocus
                 TextArea {
-                    id: scanLogTextArea
+                    id: mws_LogText
                     x: -10
                     y: -6
                     width: 546
@@ -161,26 +166,60 @@ Window {
                     color: "#16e23c"
                     wrapMode: Text.Wrap
                     clip: true
+
                     textFormat: Text.PlainText
-                    Connections {
-                        target: mainController
-                        onScrapyLogDataToQml: {
-                            //scanLogTextArea.text += scanLogData_1
-                        }
-                    }
                 }
-                enabled: true
             }
         }
 
+        ComboBox {
+            id: comboBox1
+            x: 121
+            y: 78
+            width: 115
+            height: 27
+            background: Rectangle {
+                color: "#000000"
+            }
+            displayText: "Select Spider"
+            rightPadding: 30
+            model: ListModel {
+                id: model1
+                ListElement {
+                    text: "Dark Spider"
+                }
+
+                ListElement {
+                    text: "Clear Spider"
+                }
+
+                ListElement {
+                    text: "CrazySpider"
+                }
+            }
+            flat: true
+            font.pointSize: 8
+            editable: false
+        }
+        Label {
+            id: mws_WindowViewNavLabel
+            x: 331
+            y: 89
+            width: 139
+            height: 20
+            color: "#ffffff"
+            font.underline: false
+            font.italic: false
+            font.bold: false
+            font.pointSize: 12
+        }
         Button {
-            id: viewScanLogBtn
-            x: 343
+            id: mws_PprocessBtn
+            x: 412
             y: 365
             width: 115
             height: 34
-            visible: true
-            text: qsTr("View Log")
+            text: qsTr("Pre-Processor")
             background: Rectangle {
                 color: "#161e20"
                 radius: 50
@@ -197,15 +236,12 @@ Window {
                 samples: 17
             }
             palette.buttonText: "#ffffff"
-
             onClicked: {
-                mainWin.visible = false
-                detailsWin.visible = true
+                mws_WindowViewNavLabel.text = "Pre-processor | Data"
             }
         }
-
         Button {
-            id: runSpiderBtn1
+            id: mws_RunSpiderBtn
             x: 121
             y: 365
             width: 115
@@ -228,40 +264,30 @@ Window {
                 samples: 17
             }
             palette.buttonText: "#ffffff"
-        }
 
-        Button {
-            id: button4
-            x: 564
-            y: 367
-            width: 115
-            text: qsTr("Help")
-            background: Rectangle {
-                color: "#161e20"
-                radius: 50
-            }
-            layer.enabled: true
-            layer.effect: DropShadow {
-                width: 69
-                color: "#7711f4"
-                radius: 8
-                horizontalOffset: 2
-                spread: 0
-                verticalOffset: 2
-                transparentBorder: true
-                samples: 17
-            }
-            palette.buttonText: "#ffffff"
-        }
+            onClicked: {
+                mainController.startSpiderThread()
+                mws_RunSpiderBtn.enabled = false
 
+                if (mws_RunSpiderRect.visible == false){
+                    mws_RunSpiderRect.visible = true
+                }
+                if(mws_LogDataRect.visible == true){
+                    mws_LogDataRect.visible = false
+                }
+                mws_WindowViewNavLabel.text = "Run Spider | Data"
+                mws_SpiderText.text += "Starting Spider.... " + " | " + curTimeTxt.text + " | " + curDateTxt.text + "\n"
+                mwq_LogText.text += "Starting Spider.... " + " | " + curTimeTxt.text + " | " + curDateTxt.text + "\n"
+            }
+        }
         Button {
-            id: button5
-            x: 121
-            y: 431
+            id: mws_ViewLogBtn
+            x: 268
+            y: 365
             width: 115
             height: 34
-            visible: false
-            text: qsTr("Execute")
+            visible: true
+            text: qsTr("View Log")
             background: Rectangle {
                 color: "#161e20"
                 radius: 50
@@ -278,68 +304,134 @@ Window {
                 samples: 17
             }
             palette.buttonText: "#ffffff"
+            onClicked: {
+                if (mws_RunSpiderRect.visible == true){
+                    mws_RunSpiderRect.visible = false
+                }
+                if(mws_LogDataRect.visible == false){
+                    mws_LogDataRect.visible = true
+                }
+                mainController.startScanLogThread()
+                mws_WindowViewNavLabel.text = "View Log | Data"
+            }
         }
 
-        Rectangle {
-            id: rectForTextEdit1
-            x: 242
-            y: 442
-            width: 403
-            height: 18
+        Button {
+            id: mws_GrapherBtn
+            x: 564
+            y: 365
+            width: 115
+            height: 34
+            text: qsTr("Grapher")
+            layer.effect: DropShadow {
+                width: 69
+                color: "#7711f4"
+                radius: 8
+                verticalOffset: 2
+                horizontalOffset: 2
+                transparentBorder: true
+                spread: 0
+                samples: 17
+            }
+            background: Rectangle {
+                color: "#161e20"
+                radius: 50
+            }
+            layer.enabled: true
+            palette.buttonText: "#ffffff"
+            onClicked: {
+                mws_WindowViewNavLabel.text = "Grapher | Data"
+            }
+        }
+
+        Button {
+            id: mws_QuadBtn
+            x: 14
+            y: 13
+            width: 100
+            height: 30
+            visible: true
+            text: qsTr("View Quad")
+            font.pointSize: 10
+            background: Rectangle {
+                color: "#161e20"
+                radius: 50
+            }
+            layer.effect: DropShadow {
+                width: 69
+                color: "#7711f4"
+                radius: 8
+                verticalOffset: 2
+                transparentBorder: true
+                horizontalOffset: 2
+                spread: 0
+                samples: 17
+            }
+            palette.buttonText: "#ffffff"
+            layer.enabled: true
+
+            onClicked: {
+                mainWinSingle.visible = false
+                masterWin.width = 1280
+                masterWin.height = 720
+                mainWinQuad.visible = true
+                masterWinBg.visible = true
+                curTimeTxt.visible = true
+                curDateTxt.visible = true
+                mws_QuadBtn.visible = false
+                mwq_SingleWinBtn.visible = true
+            }
+        }
+
+        Text {
+            id: mws_StatusText
+            x: 597
+            y: 89
+            width: 82
+            height: 15
             visible: false
+            color: "#ffffff"
+            text: qsTr("Processing......")
+            font.pixelSize: 12
+        }
+        Rectangle {
+            id: mws_RunSpiderRect
+            x: 121
+            y: 110
+            width: 558
+            height: 234
             color: "#000000"
             border.color: "#ffffff"
-            TextEdit {
-                id: textEdit1
-                x: 2
-                y: 442
-                width: 401
-                height: 12
-                color: "#16e23c"
-                text: qsTr("")
-                font.pixelSize: 12
+            ScrollView {
+                id: mws_runSpiderScrollView
+                x: 4
+                y: 5
+                width: 546
+                height: 223
+                focusPolicy: Qt.NoFocus
+                TextArea {
+                    id: mws_SpiderText
+                    x: -10
+                    y: -6
+                    width: 546
+                    height: 223
+                    color: "#16e23c"
+                    wrapMode: Text.Wrap
+                    clip: true
+                    textFormat: Text.PlainText
+                }
+                enabled: true
             }
         }
-
-        ComboBox {
-            id: comboBox1
-            x: 121
-            y: 81
-            width: 115
-            height: 27
-            background: Rectangle {
-                color: "#000000"
-            }
-            displayText: "Select Spider"
-            rightPadding: 30
-            model: ListModel {
-                id: model1
-                ListElement {
-                    text: "OnionSpider"
-                }
-
-                ListElement {
-                    text: "DarkSpider"
-                }
-
-                ListElement {
-                    text: "CrazySpider"
-                }
-            }
-            flat: true
-            font.pointSize: 8
-            editable: false
-        }
-
     }
 
     Rectangle {
-        id: mainWin
+        id: mainWinQuad
         x: 0
         y: 0
         width: 1280
         height: 720
-        visible: true
+        visible: false
         color: "#00ffffff"
 
         Rectangle {
@@ -361,9 +453,10 @@ Window {
                 enabled: true
                 ScrollBar.vertical.policy: ScrollBar.AsNeeded
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                //ScrollBar.vertical.position: scrollPosition
 
                 TextArea {
-                    id: runSpiderTextArea
+                    id: mwq_SpiderText
                     x: -10
                     y: -6
                     width: 551
@@ -375,14 +468,7 @@ Window {
                     clip: true
                     Component.onCompleted: {
                         //mainController.runSpider()
-                    }
-                    Connections {
-                        target: mainController
-
-                        onScrapyCliDataToQml: {
-                            runSpiderTextArea.text += scrapyCliData_1
-                        }
-                    }
+                    }      
                 }
             }
         }
@@ -413,16 +499,12 @@ Window {
             layer.enabled: true
 
             onClicked: {
-                //runSpiderProcessingText.visible = true
                 mainController.startSpiderThread()
-
-                //mainController.startScanLogThread()
-                //detailsWin.visible = vtrue
             }
         }
 
         Button {
-            id: detailsBtn
+            id: mwq_ViewLogBtn
             x: 675
             y: 376
             width: 115
@@ -446,11 +528,8 @@ Window {
             layer.enabled: true
 
             onClicked: {
-                //mainWin.visible = false
-                //detailsWin.visible = true
                 logDataProcessText.visible = true
                 mainController.startScanLogThread()
-
             }
         }
 
@@ -506,28 +585,6 @@ Window {
             layer.enabled: true
         }
 
-        Rectangle {
-            id: rectForTextEdit
-            x: 242
-            y: 442
-            width: 403
-            height: 18
-            visible: false
-            color: "#000000"
-            border.color: "#ffffff"
-
-            TextEdit {
-                id: textEdit
-                x: 2
-                y: 442
-                width: 401
-                height: 12
-                color: "#16e23c"
-                text: qsTr("")
-                font.pixelSize: 12
-            }
-        }
-
         ComboBox {
             id: comboBox
             x: 59
@@ -559,7 +616,6 @@ Window {
                     text: "CrazySpider"
                 }
             }
-
         }
 
         Rectangle {
@@ -580,21 +636,16 @@ Window {
                 enabled: true
                 ScrollBar.vertical.policy: ScrollBar.AsNeeded
                 ScrollBar.horizontal.policy: ScrollBar.AlwaysOff
+                //ScrollBar.vertical.position: ScrollBar.setPosition(100)
                 TextArea {
-                    id: scrapyLogDataTextArea
+                    id: mwq_LogText
                     x: -10
                     y: -6
                     width: 552
                     height: 223
                     color: "#16e23c"
                     wrapMode: Text.Wrap
-                    textFormat: Text.PlainText
-                    Connections {
-                        target: mainController
-                        onScrapyLogDataToQml: {
-                            scrapyLogDataTextArea.text += scanLogData_1
-                        }
-                    }
+                    textFormat: Text.PlainText                   
                     clip: true
                 }
                 focusPolicy: Qt.NoFocus
@@ -629,7 +680,7 @@ Window {
             y: 93
             width: 82
             height: 15
-            visible: false
+            visible: true
             color: "#ffffff"
             text: qsTr("Processing......")
             font.pixelSize: 12
@@ -672,10 +723,46 @@ Window {
             }
             palette.buttonText: "#ffffff"
         }
+
+        Button {
+            id: mwq_SingleWinBtn
+            x: 14
+            y: 13
+            width: 100
+            height: 30
+            visible: false
+            text: qsTr("View Single")
+            font.pointSize: 10
+            layer.effect: DropShadow {
+                width: 69
+                color: "#7711f4"
+                radius: 8
+                verticalOffset: 2
+                horizontalOffset: 2
+                transparentBorder: true
+                spread: 0
+                samples: 17
+            }
+            background: Rectangle {
+                color: "#161e20"
+                radius: 50
+            }
+            palette.buttonText: "#ffffff"
+            layer.enabled: true
+
+            onClicked: {
+                masterWin.width = 800
+                masterWin.height = 500
+                mainWinQuad.visible = false
+                mainWinSingle.visible = true
+                curTimeTxt.visible = false
+                curDateTxt.visible = false
+                masterWinBg.visible = false
+                mws_QuadBtn.visible = true
+                mwq_SingleWinBtn.visible = false
+            }
+        }
     }
-
-
-
 }
 
 
@@ -684,6 +771,6 @@ Window {
 
 /*##^##
 Designer {
-    D{i:0;formeditorZoom:0.75}D{i:28}D{i:69}
+    D{i:0;formeditorZoom:0.75}D{i:35}
 }
 ##^##*/

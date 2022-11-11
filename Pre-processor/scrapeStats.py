@@ -10,11 +10,8 @@ class ScrapeStats:
     '''
     def __init__(self):
         self.doc_total = 0
-        self.lang_count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        self.languages = {"unknown":0, "dutch":1, "english":2, "finnish":3,
-        "french":4, "german":5, "hungarian":6, "italian":7, "kazakh":8,
-        "norwegian":9, "portuguese":10, "romanian":11, "russian":12, "spanish":13,
-        "swedish":14, "turkish":15, "danish":16, "arabic":17, "chinese":18}
+        self.lang_count = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        self.languages = {"unknown": 0, "dutch": 1, "english": 2, "finnish": 3, "french": 4, "german": 5, "hungarian": 6, "italian": 7, "kazakh": 8, "norwegian": 9, "portuguese": 10, "romanian": 11, "russian": 12, "spanish": 13, "swedish": 14, "turkish": 15, "danish": 16, "arabic": 17, "chinese": 18, "hinglish": 19}
 
 # increment total document count
     def increment_total(self):

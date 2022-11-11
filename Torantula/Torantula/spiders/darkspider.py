@@ -13,14 +13,12 @@ from domaincount import DomainCount
 class DarkSpider(CrawlSpider):
     """
     A web-mining spider.
-
     The DarkSpider opens a file containing a list of URLs, and crawls through
     each, visiting all domains it discovers while crawling. Any domains that are
     within the ignoreDomains list are disqualified from scraping during the rest
     of the session, although links may still be followed. The DarkSpider
     downloads the full HTML of every page it visits, as well as noting all
     external links on each page.
-
     To use this spider: scrapy crawl dark -a sites=startingListURLS.txt
     """
 
@@ -32,7 +30,6 @@ class DarkSpider(CrawlSpider):
         specified from the command line. The user can also indicate if the
         spider should route through Tor, or if the item pipeline should also
         store data in a MySQL database.
-
         :param sites: A file with a different site to scrape on each line.
         :param args:
         :param kwargs:
@@ -83,7 +80,6 @@ class DarkSpider(CrawlSpider):
         """
         Called for each list of links collected by the spider.
         Discards those links which have domains in ignoreDomains.
-
         :param links: A list of scraped Link objects collected by the spider
         :return: a list of Link objects from "good" domains.
         """
@@ -102,7 +98,6 @@ class DarkSpider(CrawlSpider):
         Called by the spider for each response received.
         Defines a Site item based on the URL and
         body text received from each response.
-
         :param response: Full page response passed by the spider
         :return: A Site item
         """

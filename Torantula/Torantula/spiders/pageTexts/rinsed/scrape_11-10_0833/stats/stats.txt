@@ -1,0 +1,25 @@
+SCRAPE STATISTICS
+domains scraped: 44
+english domains processed: 0
+
+Language Statistics
+unknown: 20
+dutch: 0
+english: 0
+finnish: 0
+french: 0
+german: 0
+hungarian: 0
+italian: 0
+kazakh: 0
+norwegian: 0
+portuguese: 0
+romanian: 0
+russian: 0
+spanish: 0
+swedish: 0
+turkish: 0
+danish: 0
+arabic: 0
+chinese: 0
+hinglish: 24
