@@ -1,7 +1,7 @@
 # Torantula | TOR Scraper
 The Darknet Weathermap
 
-# ![torantula-ng-11-9-22](https://user-images.githubusercontent.com/22214754/200957504-ec995cf2-80e1-4c4c-b444-70e7e174b1bf.gif)              
+# ![torantula-11-11-22-4MB](https://user-images.githubusercontent.com/22214754/201460047-7c6989a3-c1e2-453b-85af-aabe56051add.gif)                
   
 This project contains several tools for scraping a vast amount of web sites and processing the downloaded HTML, with the intention of classifying the crawled domains automatically and eventually generating real-time content reports.      
 
