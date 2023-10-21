@@ -1,4 +1,4 @@
-# Torantula NG | TOR Scraper
+# Torantula ng | TOR Scraper
 The Darknet Weathermap
 ![torantula-11-11-22-4MB](https://user-images.githubusercontent.com/22214754/201460047-7c6989a3-c1e2-453b-85af-aabe56051add.gif)                              
   
