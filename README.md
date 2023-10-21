@@ -8,7 +8,7 @@ This project contains several tools for scraping a vast amount of web sites and 
 
 The **Pre-Processor** takes an output directory from Torantula as input, concatenates all the text found on a domain together, then performs several formatting and Natural-Language Processing functions on the text, including removing HTML elements and JavaScript, stemming, and language detection.
 
-Finally, the utility within **Grapher** takes an output directory from Torantula as input as well, and generates *.json* and *.gexf* graph files for rendering by by a graphing application
+Finally, the utility within **Grapher** takes an output directory from Torantula as input as well, and generates *.json* and *.gexf* graph files for rendering by a graphing application
 
 ## Requirements
 
