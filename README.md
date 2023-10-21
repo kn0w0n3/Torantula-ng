@@ -147,7 +147,9 @@ Oliver Hui - 2016 - Torantula base design and implementation
 
 Joshua McGiff - 2017 - Pre-processor and data storage/handling
 
-John-Luke Navarro -2017 - Torantula extensive development and data graphing
+John-Luke Navarro -2017 - Torantula extensive development and data graphing  
+
+Roland Varriale
 
 ## License
 
