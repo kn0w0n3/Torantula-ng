@@ -159,7 +159,7 @@ John-Luke Navarro -2017 - Torantula extensive development and data graphing
 
 Remove the f in: filename = f'quotes-{page}.html'   
 
-The new line shoul dlook like this: filename = 'quotes-{page}.html'   
+The new line should look like this: filename = 'quotes-{page}.html'   
 
 2) cannot import name suppress  
    
